@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/splide.min.css" />
+
     <link
       href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
       rel="stylesheet"
@@ -301,40 +302,56 @@
         </div>
       </section>
       <!--=========Testimonial=========-->
-      <section class="testimononial section bd-container">
+      <section class="testimononial section bd-container splide">
         <span class="section-subtitle">My client saying</span>
         <h2 class="section-title">Testimonial</h2>
 
-        <div class="testimonial__container swiper-container">
-          <div class="swiper-wrapper">
-            <div class="testimonial__content swiper-slide">
+        <div class="testimonial__container splide__track">
+          <div class="splide__list">
+            <div class="testimonial__content splide__slide">
               <img
-                src="/assets/images/testimonial2.jpg"
+                src="assets/images/testimonial1.jpg"
                 alt=""
                 class="testimonial__img"
               />
-              <h3 class="testimonial__title">Flor Goez</h3>
-              <span class="testimonial__client">Client</span>
+              <h3 class="testimonial__title">Rafael Espejo</h3>
+              <span class="testimonial__client"> Client </span>
               <p class="testimonial__description">
-                Andrés makes me a good web ecommerce for my bussiness.I
-                recommend it.
+                This company does a very good job for my enterprise. I recommend
+                it
               </p>
             </div>
-            <div class="testimonial__content swiper-slide">
+            <div class="testimonial__content splide__slide">
               <img
-                src="/assets/images/testimonial2.jpg"
+                src="assets/images/testimonial2.jpg"
                 alt=""
                 class="testimonial__img"
               />
               <h3 class="testimonial__title">Flor Goez</h3>
-              <span class="testimonial__client">Client</span>
+              <span class="testimonial__client"> Client </span>
               <p class="testimonial__description">
-                Andrés makes me a good web ecommerce for my bussiness.I
-                recommend it.
+                This company does a very good job for my enterprise. I recommend
+                it
+              </p>
+            </div>
+            <div class="testimonial__content splide__slide">
+              <img
+                src="assets/images/testimonial3.jpg"
+                alt=""
+                class="testimonial__img"
+              />
+              <h3 class="testimonial__title">Daniel Espinal</h3>
+              <span class="testimonial__client"> Client </span>
+              <p class="testimonial__description">
+                This company does a very good job for my enterprise. I recommend
+                it
               </p>
             </div>
           </div>
-          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="splide__progress">
+          <div class="splide__progress__bar"></div>
         </div>
       </section>
     </main>
@@ -344,6 +361,6 @@
     <!--=========Scripts=========-->
     <script src="/assets/js/mixitup.min.js"></script>
     <script src="/assets/js/main.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="/assets/js/splide.min.js"></script>
   </body>
 </html>

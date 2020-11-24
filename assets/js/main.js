@@ -1,5 +1,4 @@
 /*******show menu */
-
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId);
   nav = document.getElementById(navId);
@@ -87,13 +86,11 @@ function activePortfolio() {
 linkPortfolio.forEach((l) => l.addEventListener('click', activePortfolio));
 
 //***********Swipper carrousel */
-const mySwiper = new Swiper('.testimonial__container', {
-  spaceBetween: 16,
-  loop: true,
-  grabCursor: true,
 
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('.splide', {
+    type: 'loop',
+    perPage: 1,
+    autoplay: true,
+  }).mount();
 });

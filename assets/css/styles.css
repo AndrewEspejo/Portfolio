@@ -547,18 +547,9 @@ img {
     margin-bottom: var(--mb-1);
   }
 
-  .testimonial__cliente {
+  .testimonial__client {
     font-size: var(--small-font-size);
     color: var(--first-color-light);
     margin-bottom: var(--mb-2);
-  }
-
-  /*******Swipper**********/
-  .swiper-pagination {
-    position: initial;
-  }
-
-  .swiper-pagination-bullet-active {
-    background-color: var(--first-color);
   }
 }
