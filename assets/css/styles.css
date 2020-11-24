@@ -37,7 +37,8 @@
   --z-tooltip: 10;
   --z-fixed: 100;
 }
-@media screen and (mind-width: 768px) {
+
+@media screen and (min-width: 768px) {
   :root {
     --biggest-font-size: 2.5rem;
     --h1-font-size: 2.25rem;
@@ -47,74 +48,177 @@
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.813rem;
   }
+}
+/******* Base **********/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
 
-  /******* Base **********/
-  *,
-  ::before,
-  ::after {
-    box-sizing: border-box;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  background-color: var(--first-color-lighten);
+  color: var(--text-color);
+  line-height: 1.6;
+}
 
-  body {
-    margin: var(--header-height) 0 0 0;
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-medium);
-    background-color: var(--first-color-lighten);
-    color: var(--text-color);
-    line-height: 1.6;
-  }
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
 
-  h1,
-  h2,
-  h3,
-  p {
-    margin: 0;
-  }
+h2,
+h3 {
+  font-weight: var(--font-semi-bold);
+}
 
-  h2,
-  h3 {
-    font-weight: var(--font-semi-bold);
-  }
+ul {
+  padding: 0;
+  list-style: none;
+}
 
-  ul {
-    padding: 0;
-    list-style: none;
-  }
+a {
+  text-decoration: none;
+}
 
-  a {
-    text-decoration: none;
-  }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
+/**********Class CSS*****/
+.section {
+  padding: 4rem 0 2rem;
+}
 
-  /**********Class CSS*****/
-  .section {
-    padding: 4rem 0 2rem;
-  }
+.section-title,
+.section-subtitle {
+  text-align: center;
+}
 
-  .section-title,
-  .section-subtitle {
+.section-title {
+  font-size: var(--h1-font-size);
+  color: var(--first-color);
+  margin-bottom: var(--mb-3);
+}
+
+.section-subtitle {
+  display: block;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+/***********layout*******/
+.bd-container {
+  max-width: 1024px;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+
+.bd-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: #000;
+}
+
+/********Nav*********/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    padding-top: 1.5rem;
     text-align: center;
+    background-color: #000;
+    transition: 0.4s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 1rem 1rem;
   }
 
-  .section-title {
-    font-size: var(--h1-font-size);
-    color: var(--first-color);
+  .nav__item {
     margin-bottom: var(--mb-3);
   }
 
-  .section-subtitle {
-    display: block;
-    font-size: var(--smaller-font-size);
-    font-weight: var(--font-semi-bold);
+  .nav__link {
+    color: var(--first-color-lighten);
+    transition: 0.3s;
+  }
+
+  .nav__link:hover {
+    color: var(--first-color-light);
+  }
+
+  .nav__logo,
+  .nav__toggle {
+    color: var(--first-color-lighten);
+  }
+
+  .nav__toggle {
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+
+  /*******Show menu *****/
+  .show-menu {
+    top: var(--header-height);
+  }
+
+  /**********Active menu ************/
+  .active-link {
+    position: relative;
+  }
+
+  .active-link::after {
+    content: '';
+    position: absolute;
+    bottom: -0.7rem;
+    left: 0;
+    width: 65%;
+    height: 3px;
+    background-color: var(--first-color-light);
+  }
+
+  /**********Change background header *******/
+  .scroll-header {
+    background-color: var(--first-color-lighten);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .scroll-header .nav__logo,
+  .scroll-header .nav__toggle,
+  .scroll-header .nav__link {
+    color: var(--first-color-dark);
+  }
+
+  .scroll-header .nav__menu {
+    background-color: var(--first-color-lighten);
   }
 }
